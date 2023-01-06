@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.echoserver_demo4.chatclient.Controller">
+    <padding>
+        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0"/>
+    </padding>
+
+    <HBox spacing="5" fx:id="loginBox" VBox.vgrow="ALWAYS" >
+        <TextField fx:id="loginField" promptText="Login"/>
+        <PasswordField fx:id="passwordField" promptText="Password"/>
+        <Button text="Auth" defaultButton="true" onAction="#btnAuthClick"/>
+    </HBox>
+
+    <HBox fx:id="messageBox" visible="false" spacing="5">
+        <VBox spacing="5">
+            <TextArea fx:id="textArea" VBox.vgrow="ALWAYS"/>
+                <HBox spacing="5" >
+                    <TextField fx:id="textField" HBox.hgrow="ALWAYS"/>
+                    <Button text="Send" defaultButton="true" onAction="#btnSendClick"/>
+                </HBox>
+        </VBox>
+        <ListView fx:id="clientList" minWidth="200" maxWidth="200" onMouseClicked="#selectClient"/>
+    </HBox>
+</VBox>
